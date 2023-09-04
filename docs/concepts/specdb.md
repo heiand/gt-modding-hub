@@ -162,8 +162,16 @@ Lists the different tracks.
 | --------------------| ------------- | ----------- | 
 `Label`               | String        | The human-readable reference name for the track.
 `ModelName`           | String        | States the name of the track model file (without file extension). Identical to `Label`
-`NameEng`             | String        | Looks like hexadecimal values, use unknown. Seemingly 
+`NameJap`             | String        | Empty (TO-DO: further research, NTSC-J only?)
+`NameEng`             | String        | Hexadecimal values (TO-DO: further research on what the values mean - so far, no recognizable pattern)
+`Unk`                 | String        | Empty/unused (TO-DO: further research, other games perhaps?)
 `Condition`           | Int           | States the track surface/condition. `0` = dry tarmac, `1` = wet tarmac, `2` = dirt, `3` = snow.
+`EntryMax`            | Int           | Maximum amount of cars that can be in a race on that track.
+`CourseTopology`      | Int           | TO-DO: What does this do exactly? Assumption: `0`= normal track, `1` = point to point (only used for Las Vegas Drag Strip), `2` = ?? (used for Gymkhana courses and Photo Travel locations)
+`NumberOfLanes`       | Int           | Indicates the number of lanes on the track. All tracks use `1`, `2` is only used by Las Vegas.
+`HasPitLane`          | Int           | Indicates whether a track has a pit lane. Read as: `0` = has no pit lane, `1` = has pit lane.
+`GarageSide`          | Int           | Lists the side the pit lane is on. `0` = no pit lane, `1` = pit lane on the right, `2` = pit lane on the left.
+
 
 ### ENGINE
 :material-check: *Applicable to: GT4 and above*
@@ -395,5 +403,5 @@ This table lists all rear wings that are available to purchase in GT Auto.
     | ----------------------------| ------------- | ----------- | 
     `Label`                       | String        | The internal name for the rear wing. 
     `Unk`                         | Int           | Price 
-    `Unk_1`                       | Int           | Likely front downforce.
-    `Unk_2`                       | Int           | Likely rear downforce.
+    `Unk_1`                       | Int           | Front downforce added by the rear spoiler.
+    `Unk_2`                       | Int           | Rear downforce added by the rear spoiler.
