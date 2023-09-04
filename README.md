@@ -1,5 +1,3 @@
 # gt-modding-hub
 
-This is the public repository behind the GT Modding Hub.
-
-Dependencies are mkdocs-material among other extensions.
+Fork from nenkai/gt-modding-hub. Only used for updating the SpecDB page for now.
