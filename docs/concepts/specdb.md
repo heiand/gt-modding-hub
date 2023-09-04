@@ -133,6 +133,16 @@ The most important tables are [`GENERIC_CAR`](#generic_car) and `DEFAULT_PARTS`.
 `WHEEL`                | Defines all the wheels.
 `WING`                 | Defines all the wings. (for GT4, maybe GT5P)
 
+### ALLOW_ENTRY (TO-DO)
+:material-check: *Applicable to: GT4 (and above?)*
+
+Manages individual permitted cars for events that do not use the car's specifications, such as one-make races or the two Schwarzwald League events.
+
+|     Column          |  Data Type    | Description
+| --------------------| ------------- | ----------- | 
+`Label`               | String        | The human-readable reference name for the event regulation. Labels have a `reg_` prefix.
+`Entry(0 through 50)` | String       | Each entry here corresponds to a `RowId` in [GENERIC_CAR](#generic_car)
+
 ### CAR_VARIATION
 :material-check: *Applicable to: GT4 / TT*
 
@@ -142,6 +152,18 @@ Links a car to a [VARIATION](#variation) row.
 | --------------------| ------------- | ----------- | 
 `Label`               | String        | The human-readable reference name for the car. Must match with the car to search.
 `VariationID`         | Int           | ID matching [VARIATION](#variation).
+
+### COURSE (TO-DO)
+:material-check: *Applicable to: GT4 (and above?)*
+
+Lists the different tracks.
+
+|     Column          |  Data Type    | Description
+| --------------------| ------------- | ----------- | 
+`Label`               | String        | The human-readable reference name for the track.
+`ModelName`           | String        | States the name of the track model file (without file extension). Identical to `Label`
+`NameEng`             | String        | Looks like hexadecimal values, use unknown. Seemingly 
+`Condition`           | Int           | States the track surface/condition. `0` = dry tarmac, `1` = wet tarmac, `2` = dirt, `3` = snow.
 
 ### ENGINE
 :material-check: *Applicable to: GT4 and above*
@@ -362,3 +384,16 @@ In GT4, in order to get variation rows you would first need to obtain it from [C
     `ModelRear`                   | Float         | Model Rear.
     `ModelProjection`             | Float         | Model Projection.
     `ColorChip(0 through 4)`      | UInt          | Color of the chip for the car (the color display rectangle for menus).
+
+
+### WING (TO-DO)
+
+This table lists all rear wings that are available to purchase in GT Auto.
+
+??? info "GT4 Table (click to expand)"
+    |     Column                  |  Data Type    | Description
+    | ----------------------------| ------------- | ----------- | 
+    `Label`                       | String        | The internal name for the rear wing. 
+    `Unk`                         | Int           | Price 
+    `Unk_1`                       | Int           | Likely front downforce.
+    `Unk_2`                       | Int           | Likely rear downforce.
